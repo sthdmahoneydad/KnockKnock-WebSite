@@ -1,0 +1,93 @@
+
+/* RoomLayout.css */
+
+
+ svg {
+        border-style:solid;
+        border-width:1px;
+        border-color:#ccc;
+     }
+	  
+	rect {
+      stroke-width: 1;
+      stroke:steelblue;
+      fill:#fff;
+      fill-opacity: .5;
+    }
+
+    circle {
+        stroke-width: 5;
+        fill-opacity: .5;
+    }
+	.beacon {
+
+		fill: darkred;
+		stroke: lightgray;
+	}
+	.customer {
+		r: 20;
+		fill: lightGreen;
+		stroke: darkGreen;
+	}
+
+	.physicalObject {
+	  stroke-width: 1;
+      stroke:steelblue;
+      fill:steelblue;
+      fill-opacity: .10;
+	}
+
+	.areaOfInterest {
+	  stroke-width: 1;
+      stroke:steelblue;
+      fill:#ccc;
+      fill-opacity: .10;
+	}
+
+	.activeShopperListTitle {
+	  font-weight:bold;
+	  font-size:18px;
+	  color:steelblue;
+	}
+
+	.activeShopperExperienceListTitle {
+	  font-weight:bold;
+	  font-size:18px;
+	  color:steelblue;
+	}
+
+	
+	.canvas {
+		
+	}
+	.popup {
+		position: absolute;
+
+		background-color: #fff;
+		width: 200px;
+		border: 1px #ccc solid;
+		border-radius: 6px;
+		box-shadow: #333 2px 2px 4px;
+		padding: 8px;
+		font-size: 11px;
+		font-family: arial, helvetica, sans-serif;
+	}
+	.popup h2 {
+		margin: 0 0 1rem 0;
+	}
+
+	.activeShopperList{
+		width:1000px;
+		float:left;
+		align:left;
+		display:float;
+	
+	}
+
+	.activeShopperExperienceList{
+		width:1000px;
+		float:left;
+		align:left;
+		display:float;
+	
+	}

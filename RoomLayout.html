@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="$1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Floor Layout</title>
+	<script type="text/javascript" src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="RoomLayoutManager.js" ></script>
+	<script type="text/javascript" src="CustomerMovementManager.js" ></script>
+	<script type="text/javascript" src="ShoppingExperienceManager.js" ></script>
+	<script type="text/javascript" src="d3SVGManager.js" ></script>
+	<link rel="stylesheet" type="text/css" href="RoomLayout.css">
+
+  </head>
+  <body>
+
+	<div id="MyRoomLayoutPlaceHolder" />
+  
+  <script>
+
+  	
+	// Track Customers
+
+	var custList = getCustomers();
+	var custMovementList = getCustomerMovements();
+	
+	var svgContainer =  getSVGContainer("MyRoomLayoutPlaceHolder");
+	
+	
+	renderRoomLayout(svgContainer);
+	renderActiveShopperList(svgContainer);
+	renderActiveShopperExperienceList(svgContainer);
+	
+// 	Add Customer's to Layout - should take in layout and customer object, with beacon data
+
+//	applyCustomerMovementDataToActiveShoppingExperiences(getCustomers(), getMainAreaOfInterest() );
+//	trackCustomersInLayout( svgContainer , getCustomers(), getAreasOfInterest() ) ;
+
+
+	setInterval(function(){
+		var data = processCustomerMovementData();		
+		
+		trackCustomersInLayout( svgContainer , data, getAreasOfInterest() ) ;
+		trackCustomerShoppingExperience( svgContainer, getActiveShopperExperienceList(), getAreasOfInterest() );
+		trackCustomerShoppingExperiences( svgContainer, getActiveShopperExperienceList(), getAreasOfInterest() );
+		
+	  },5000);
+	
+
+	// While tracking customer/beacon data- determine points of interest and fire additional tracking events(based on - in certain area, etc. or in area for x time... )
+			
+  </script>
+  
+
+      
+
+	  
+  </body>
+  
+
+  
+  
+  
+  
+</html>
