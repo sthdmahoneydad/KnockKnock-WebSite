@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Beacons</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="beacon in vm.beacons"
+       ui-sref="beacons.view({ beaconId: beacon._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="beacon.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="beacon.user" ng-bind="beacon.user.displayName"></span>
+        <span ng-if="!beacon.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="beacon.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.beacons.$resolved && !vm.beacons.length">
+    No Beacons yet, why don't you <a ui-sref="beacons.create">create one</a>?
+  </div>
+</section>
