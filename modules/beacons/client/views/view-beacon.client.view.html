@@ -4,6 +4,9 @@
   </div>
   <div class="pull-right"
        ng-show="vm.beacon.isCurrentUserOwner">
+    <a class="btn btn-default" ui-sref="beacons.list()">
+      <i class="glyphicon glyphicon-list-alt"></i>
+    </a>
     <a class="btn btn-primary"
        ui-sref="beacons.edit({ beaconId: vm.beacon._id })">
       <i class="glyphicon glyphicon-edit"></i>
@@ -12,15 +15,23 @@
       <i class="glyphicon glyphicon-trash"></i>
     </a>
   </div>
-  <small>
-    <em class="text-muted">
-      Posted on
-      <span ng-bind="vm.beacon.created | date:'mediumDate'"></span>
-      by
-      <span ng-if="vm.beacon.user"
-            ng-bind="vm.beacon.user.displayName"></span>
-      <span ng-if="!vm.beacon.user">Deleted User</span>
-    </em>
-  </small>
+
+
+  <div class="panel panel-default">
+    <div class="body" ></div>
+    <div class="panel-body">
+      <label for="name" >Name : </label>
+      <span ng-bind="vm.beacon.name" id="name"></span><br/>
+      <label for="uuid" >UUID: </label>
+      <span ng-bind="vm.beacon.uuid" id="uuid"></span><br/>
+      <label for="major">Major : </label>
+      <span ng-bind="vm.beacon.major" id="major"></span><br/>
+      <label for="minor">Minor : </label>
+      <span ng-bind="vm.beacon.minor" id="minor"></span><br/>
+      <label for="signaldistance">Signal: </label>
+      <span ng-bind="vm.beacon.signaldistance" id="signaldistance"></span><br/>
+    </div>
+  </div>
+
   <p class="lead" ng-bind="vm.beacon.content"></p>
 </section>

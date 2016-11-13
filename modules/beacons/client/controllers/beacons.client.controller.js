@@ -20,7 +20,7 @@
 
     // Remove existing Beacon
     function remove() {
-      if ($window.confirm('Are you sure you want to delete?')) {
+      if ($window.confirm('Are you sure you want to delete this beacon?')) {
         vm.beacon.$remove($state.go('beacons.list'));
       }
     }
