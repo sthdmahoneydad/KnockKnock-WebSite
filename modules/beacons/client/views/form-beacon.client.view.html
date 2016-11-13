@@ -11,12 +11,38 @@
           <div ng-messages="vm.form.beaconForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Beacon name is required.</p>
           </div>
-        </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.beacon._id ? 'Update' : 'Create'}}</button>
-        </div>
-        <div ng-show="vm.error" class="text-danger">
-          <strong ng-bind="vm.error"></strong>
+
+          <label class="control-label" for="uuid">UUID</label>
+          <input name="uuid" type="text" ng-model="vm.beacon.uuid" id="uuid" class="form-control" placeholder="UUID" required>
+          <div ng-messages="vm.form.beaconForm.uuid.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Beacon UUID is required.</p>
+          </div>
+
+          <label class="control-label" for="major">Major</label>
+          <input name="major" type="number" maxlength="5" ng-model="vm.beacon.major" id="major" class="form-control" placeholder="0" required >
+          <div ng-messages="vm.form.beaconForm.major.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Beacon major is required.</p>
+          </div>
+
+          <label class="control-label" for="minor">Minor</label>
+          <input name="minor"  type="number" maxlength="5" ng-model="vm.beacon.minor" id="minor" class="form-control" placeholder="0" required>
+          <div ng-messages="vm.form.beaconForm.minor.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Beacon minor is required.</p>
+          </div>
+
+          <label class="control-label" for="signaldistance">Signal Distance</label>
+          <input name="signaldistance" type="number" maxlength="2" ng-model="vm.beacon.signaldistance" id="signaldistance" class="form-control" placeholder="59" required>
+          <div ng-messages="vm.form.beaconForm.signaldistance.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Beacon signal distance is required.</p>
+          </div>
+          <p/>
+          <div class="form-group">
+            <button type="submit"  class="btn btn-success">{{vm.beacon._id ? 'Update' : 'Create'}}</button>
+            <button type="button" value="Cancel" class="btn btn-default" ui-sref="beacons.view({ beaconId: vm.beacon._id })"  ><span class="glyphicon glyphicon-remove"> Cancel</span></button>
+          </div>
+          <div ng-show="vm.error" class="text-danger">
+            <strong ng-bind="vm.error"></strong>
+          </div>
         </div>
       </fieldset>
     </form>
